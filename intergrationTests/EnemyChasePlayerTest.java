@@ -15,25 +15,30 @@ public class EnemyChasePlayerTest {
     @Before
     public void setUp() throws Exception {
         this.level1 = new Level();
-        this.playerCar = new Player(new Coordinates(5,5), 5, 10);
-        this.enemyAI = new Enemy(new Coordinates(7,7), 10);
-
+        this.playerCar = new Player(new Coordinates(2,2), 5, 10);
+        this.enemyAI = new Enemy(new Coordinates(7,7), 10, this.playerCar);
         this.level1.addCars(this.enemyAI);
         this.level1.addCars(this.playerCar);
-
-        this.enemyAI.findPlayerLocation(this.level1.getCars());
-
-
-
-
     }
 
     // write some logic that tests if an enemy moves in direction of player when enemy is given context
     @Test
     public void testEnemyMovesInPlayerDirectionEachTurn(){
-        for(int i = 0; i < this.level1.getCars().size(); i++){
+        for(int i = 0; i <= 4; i++){
             // if()
-            this.level1.getCars().get(i).move();
+            for(Car car : this.level1.getCars()){
+
+                // customize movement of Player car
+                if(car.getClass().getName().equals("Player")){
+                     car.move();
+
+                // move Enemy car
+                }else{
+                    car.move();
+
+                }
+            }
+
         }
     }
 

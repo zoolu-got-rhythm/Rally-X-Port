@@ -7,7 +7,7 @@ import java.util.List;
 public class Level implements ContainsCars{
     // compose everything
     private Grid grid; // aggregated object reference
-    private List<Car> cars;
+    private List<? extends Car> cars;
     private List<Obstacle> obstacles;
     private List<Flag> flags;
 
@@ -19,7 +19,7 @@ public class Level implements ContainsCars{
     }
 
     @Override
-    public List<Car> getCars() {
+    public List<? extends Car> getCars() {
         return this.cars;
     }
 
@@ -35,7 +35,7 @@ public class Level implements ContainsCars{
         return flags;
     }
 
-    public void addCars(Car car) {
+    public <T extends Car> void addCars(T car) {
         this.cars.add(car);
     }
 
@@ -49,5 +49,5 @@ public class Level implements ContainsCars{
 }
 
 interface ContainsCars{
-    public List<Car> getCars();
+    public List<? extends Car> getCars();
 }
