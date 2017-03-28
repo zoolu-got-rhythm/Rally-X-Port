@@ -3,6 +3,7 @@
  */
 public class Player extends Car {
     private int fuel;
+    private int lives;
 
     public Player(Coordinates pos, int speed, int fuel){
         super(pos, speed);

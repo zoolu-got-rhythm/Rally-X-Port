@@ -23,8 +23,11 @@ public class Enemy extends Car {
             // playerLoc = this.findPlayerLocation(this.player);
 
             List<Character> directionsToMoveIn = decideOnWhichDirectionToGoInBasedOnPlayersPosition(this.player.getPos());
-            Character getTheDirectionToMoveIn = pickADirection(directionsToMoveIn);
-            moveInADirection(getTheDirectionToMoveIn);
+            // if enemy position is same as player position don't move anywhere, just stay still.
+            if(directionsToMoveIn.size() != 0) {
+                Character getTheDirectionToMoveIn = pickADirection(directionsToMoveIn);
+                moveInADirection(getTheDirectionToMoveIn);
+            }
 
         // run default random movement logic: if no player object has been parsed in
         }else{
@@ -67,7 +70,8 @@ public class Enemy extends Car {
     private Character pickADirection(List<Character> gatherdDirections){
 
         int n = (int) Math.floor(Math.random() * gatherdDirections.size());
-        System.out.println(n);
+        System.out.println("size of gatherd directions list " + gatherdDirections.size());
+        System.out.println("index: " + n);
         return gatherdDirections.get(n);
     }
 
