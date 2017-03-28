@@ -21,6 +21,7 @@ public class Enemy extends Car {
         // adjust AI logic to chase player object reference
         if(this.player != null){
             // playerLoc = this.findPlayerLocation(this.player);
+
             List<Character> directionsToMoveIn = decideOnWhichDirectionToGoInBasedOnPlayersPosition(this.player.getPos());
             Character getTheDirectionToMoveIn = pickADirection(directionsToMoveIn);
             moveInADirection(getTheDirectionToMoveIn);
@@ -40,27 +41,34 @@ public class Enemy extends Car {
     private List<Character> decideOnWhichDirectionToGoInBasedOnPlayersPosition(Coordinates playersLocation){
         List<Character> potentialDirections = new ArrayList<>();
         // if/elses
+//        if(playersLocation.getX() == super.getPos().getX() && playersLocation.getY() == super.getPos().getY())
+//            throw new Exception("this enemy object is on the same position as the player");
+
+
         if(playersLocation.getX() > super.getPos().getX()) {
-            potentialDirections.add('w');
-        }
-
-        if(playersLocation.getY() > super.getPos().getY()){
-            potentialDirections.add('n');
-        }
-
-        if(playersLocation.getX() < super.getPos().getX()){
             potentialDirections.add('e');
         }
 
-        if(playersLocation.getY() < super.getPos().getY()){
+        if(playersLocation.getY() > super.getPos().getY()){
             potentialDirections.add('s');
+        }
+
+        if(playersLocation.getX() < super.getPos().getX()){
+            potentialDirections.add('w');
+        }
+
+        if(playersLocation.getY() < super.getPos().getY()){
+            potentialDirections.add('n');
         }
 
         return potentialDirections;
     }
 
     private Character pickADirection(List<Character> gatherdDirections){
-        return gatherdDirections.get((int) Math.floor(Math.random() * gatherdDirections.size()));
+
+        int n = (int) Math.floor(Math.random() * gatherdDirections.size());
+        System.out.println(n);
+        return gatherdDirections.get(n);
     }
 
 

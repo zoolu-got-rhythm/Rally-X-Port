@@ -7,7 +7,7 @@ import java.util.List;
 public class Level implements ContainsCars{
     // compose everything
     private Grid grid; // aggregated object reference
-    private List<? extends Car> cars;
+    private List<Car> cars;
     private List<Obstacle> obstacles;
     private List<Flag> flags;
 
