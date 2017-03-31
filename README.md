@@ -2,7 +2,11 @@
 Inspired by the Rally X namco arcade machine in[kongs bar cardiff](http://www.kongsbars.com/cardiff/)
 
 
-![image of rally x arcade machine](http://images.goodsmile.info/cgm/images/product/20160916/5961/41412/large/370d6fa35c1dc1cf63f98a082f03df33.jpg)
+![image of rally x arcade machine](http://images.goodsmile.info/cgm/images/product/20160916/5961/41412/large/370d6fa35c1dc1cf63f98a082f03df33.jpg =100x200)
+
+![java duke](http://www.mikestratton.net/images/java_duke.png =100x)
+
+![android](https://img-new.cgtrader.com/items/311799/0f342d7f9a/android-mascot-3d-model.jpg =100x)
 
 ## Objectives
 - release for the Java Virtual Machine(JVM)
