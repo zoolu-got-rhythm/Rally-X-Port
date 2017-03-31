@@ -1,5 +1,5 @@
 # Rally X port
-Inspired by the Rally X namco arcade machine in[kongs bar cardiff](http://www.kongsbars.com/cardiff/)
+Inspired by the Rally X namco arcade machine in [kongs bar cardiff](http://www.kongsbars.com/cardiff/)
 
 
 <image src="http://images.goodsmile.info/cgm/images/product/20160916/5961/41412/large/370d6fa35c1dc1cf63f98a082f03df33.jpg" width="250" height="300" />
