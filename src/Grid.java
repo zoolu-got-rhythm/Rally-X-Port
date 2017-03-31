@@ -11,10 +11,12 @@ public class Grid {
     // List<Car> cars = new ArrayList<>();
 
 
-    public Grid(){
+    public Grid(int w, int h){
+        this.w = w;
+        this.h = h;
         this.tiles = new ArrayList<>();
-        for(int x = 0; x <= w; x++){
-            for(int y = 0; y <= h; y++){
+        for(int x = 0; x < this.getW(); x++){
+            for(int y = 0; y < this.getH(); y++){
                 this.tiles.add(new Coordinates(x, y));
             }
         }

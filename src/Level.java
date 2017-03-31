@@ -12,7 +12,7 @@ public class Level implements ContainsCars{
     private List<Flag> flags;
 
     public Level() {
-        this.grid = new Grid();
+        this.grid = new Grid(10, 10);
         this.cars = new ArrayList<>();
         this.obstacles = new ArrayList<>();
         this.flags = new ArrayList<>();
