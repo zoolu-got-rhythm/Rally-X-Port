@@ -849,7 +849,7 @@
       <updated>1490386410952</updated>
       <workItem from="1490386415473" duration="33403000" />
       <workItem from="1490720653146" duration="7450000" />
-      <workItem from="1490981896743" duration="25076000" />
+      <workItem from="1490981896743" duration="26590000" />
     </task>
     <servers />
   </component>
@@ -886,7 +886,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68863000" />
+    <option name="totallyTimeSpent" value="70377000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1391,14 +1391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/intergrationTests/EnemyChasePlayerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="62" lean-forward="true" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Car.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1435,6 +1427,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intergrationTests/EnemyChasePlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="31" column="62" lean-forward="true" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
