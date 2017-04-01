@@ -9,6 +9,7 @@ public abstract class Car implements Veichle, RequestMove {
     private Coordinates pos;
     private Coordinates prevPos;
     private int speed;
+    private Boolean readyToMove;
     private java.util.Map<Character, Coordinates> directions;
     private Character[] dirs = {'n', 'e', 's', 'w'};
 
@@ -18,6 +19,7 @@ public abstract class Car implements Veichle, RequestMove {
         this.pos = co; // set origin position of car
         this.prevPos = this.pos;
         this.speed = speed;
+        this.readyToMove = false;
         this.directions = new HashMap<>();
         this.directions.put('n', new Coordinates(0, -1));
         this.directions.put('e', new Coordinates(1, 0));
@@ -42,32 +44,16 @@ public abstract class Car implements Veichle, RequestMove {
     }
 
     @Override
-    public Boolean requestMove(){
-        Callable<Boolean> task = new Callable<Boolean>() {
+    public void requestMove(){
+        System.out.println("waiting to make move");
+        new Timer().schedule(new TimerTask() {
             @Override
-            public Boolean call() throws Exception {
-                try {
-                    Thread.sleep(speed / 10);
-                    move();
-                    return true;
-                }catch (InterruptedException e){
-
-                }
+            public void run() {
+                readyToMove = true;
+                System.out.println("ran");
             }
-        };
-
-        ExecutorService executer = Executors.newFixedThreadPool(1);
-        Future<Boolean> future = executer.submit(task);
-
-        Boolean result = future.get();
-
-
-
-
-        return future.isDone();
+        }, speed);
     }
-
-
 
     public Coordinates getPos() {
         return pos;
@@ -87,5 +73,13 @@ public abstract class Car implements Veichle, RequestMove {
 
     public void setPrevPos(Coordinates prevPos) {
         this.prevPos = prevPos;
+    }
+
+    public Boolean getReadyToMove() {
+        return readyToMove;
+    }
+
+    public void setReadyToMove(Boolean readyToMove) {
+        this.readyToMove = readyToMove;
     }
 }

@@ -2,10 +2,10 @@
  * Created by Slime on 24/03/2017.
  */
 public class Player extends Car {
-    private int fuel;
+    private double fuel;
     private int lives;
 
-    public Player(Coordinates pos, int speed, int fuel){
+    public Player(Coordinates pos, int speed, double fuel){
         super(pos, speed);
         this.fuel = fuel;
     }
@@ -18,5 +18,22 @@ public class Player extends Car {
         int x = co.getX();
         int y = co.getY();
         super.getPos().move(x, y);
+
+        // drain players fuel after every move
+        this.drainFuel();
+    }
+
+    private void drainFuel() {
+        if (this.getFuel() > 0.1) {
+            this.fuel -= 0.1;
+        }
+    }
+
+    public double getFuel() {
+        return fuel;
+    }
+
+    public int getLives() {
+        return lives;
     }
 }
