@@ -1,10 +1,11 @@
 import java.util.*;
 import java.util.Map;
+import java.util.concurrent.*;
 
 /**
  * Created by Slime on 24/03/2017.
  */
-public abstract class Car implements Veichle {
+public abstract class Car implements Veichle, RequestMove {
     private Coordinates pos;
     private Coordinates prevPos;
     private int speed;
@@ -39,6 +40,34 @@ public abstract class Car implements Veichle {
         this.pos = prevPos;
         System.out.println("ran");
     }
+
+    @Override
+    public Boolean requestMove(){
+        Callable<Boolean> task = new Callable<Boolean>() {
+            @Override
+            public Boolean call() throws Exception {
+                try {
+                    Thread.sleep(speed / 10);
+                    move();
+                    return true;
+                }catch (InterruptedException e){
+
+                }
+            }
+        };
+
+        ExecutorService executer = Executors.newFixedThreadPool(1);
+        Future<Boolean> future = executer.submit(task);
+
+        Boolean result = future.get();
+
+
+
+
+        return future.isDone();
+    }
+
+
 
     public Coordinates getPos() {
         return pos;
